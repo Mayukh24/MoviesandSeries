@@ -1,0 +1,52 @@
+#movie-details{
+    display: flex;
+    flex-direction: row;
+    margin: 2rem;
+    padding: 1rem;
+}
+
+.left{    
+    padding: 1rem;
+    background-color: rgba(24, 21, 32, 0.712);
+}
+
+.extra-info ul{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    padding-left: 0;
+}
+
+.thumbnail{
+    width: 14rem
+}
+
+.right{
+    margin: 1rem;
+}
+
+.right h1{
+    margin:0;
+}
+
+.right strong{
+    color: white;
+}
+.right p{
+    color: rgb(196, 113, 5);
+}
+
+.right .btn{
+    background-color: rgb(209, 209, 0);
+    text-decoration: none;
+    color: black;
+    padding: 5px;
+}
+
+.left li{
+    color: rgb(152, 152, 153);
+}
+
+.left strong{
+    color: white;
+}
