@@ -9,6 +9,27 @@ const form = document.getElementById('form')
 const form1 = document.getElementById('form1')
 const search = document.getElementById('search')
 const reloadtButton = document.querySelector("logo");
+const tagsEl = document.getElementById("tags");
+const cinemaw = document.getElementById('cinema-w')
+const seriesw = document.getElementById('tv-series-w')
+const a = document.querySelector('.addList')
+
+function setGenre(){
+  tagsEl.innerHTML = '';
+  genres.forEach(genre => {
+    const t = document.createElement('select');
+    t.classList.add('tag');
+    t.id = genre.id;
+    t.innertext = genre.name;
+    tagsEl.append(t);
+  })
+}
+
+var n;
+var l;
+var mId;
+var mIdS;
+
 
 
 function myFunction() {
@@ -117,21 +138,11 @@ function getIndividual(){
     axios.get(URLInd)
     .then((response)=>{
         let movie = response.data;
-
-        console.log(movie);
-        const { title, poster_path, overview, genres, release_date, vote_average, imdb_id, run_time, production_companies, status} = movie
-
-
-
-        
-        /*var genre = setGenres(genres);
-        function setGenres(e){
-            e.forEach(genre =>{
-                genre.name;
-            })
-        }
+        const { title, poster_path, overview, genres, release_date, vote_average, imdb_id, run_time, production_companies, status, id} = movie
        
-        console.log(genre);*/
+        n = ifItIncludes(id);
+        mId = id;
+        
         
         var gen = (genres.map(function(obj) {
             return obj.name;
@@ -139,9 +150,14 @@ function getIndividual(){
         var prod = (production_companies.map(function(obj) {
             return obj.name;
         }).join(","));
+        let output;
+
+         
+
+        
 
 
-        let output =`
+        output =`
         <div class="left">        
           <div class="image-dp">
             <img src="${IMG_PATH + poster_path}" class="thumbnail">
@@ -166,7 +182,10 @@ function getIndividual(){
             <h3>Synopsis</h3>
             ${overview}
             <hr>
-            <a href="http://imdb.com/title/${imdb_id}" target="_blank" class="btn btn-primary">View IMDB</a>
+          </div>
+          <div class="life">
+            <button href="http://imdb.com/title/${imdb_id}" target="_blank" class="btn btn-primary">View IMDB</button>
+            <button id="button-s" class="btn btn-primary" onclick="chooseM()">Add or Remove from Watchlist</button>
           </div>
         </div>
       `;
@@ -177,7 +196,6 @@ function getIndividual(){
         console.log(err);
     });   
 }
-
 
 //Series
 function tvSelected(id){
@@ -194,7 +212,10 @@ function getIndividualS(){
         let movie = response.data;
 
         console.log(movie);
-        const { name, poster_path, overview, genres, first_air_date, vote_average, imdb_id, backdrop_path, episode_run_time, status, number_of_seasons, production_companies} = movie
+        const { name, poster_path, overview, genres, first_air_date, vote_average, imdb_id, backdrop_path, episode_run_time, status, number_of_seasons, production_companies, id} = movie
+
+        l = ifItSIncludes(id);
+        mIdS = id;
 
         var gen = (genres.map(function(obj) {
             return obj.name;
@@ -204,10 +225,14 @@ function getIndividualS(){
             return obj.name;
         }).join(","));
 
+        n = ifItIncludes(id);
+        mId = id;
+
 
 
         var background = document.createElement("img");
         background = IMG_PATH + backdrop_path;
+
 
 
 
@@ -238,11 +263,13 @@ function getIndividualS(){
             ${overview}
             <hr>
           </div>
+          <div class = "life">          
+            <button id="button-s" class="btn btn-primary" onclick="chooseS()">Add or Remove from Watchlist</button>
+          </div>
         </div>
       `;
       
       $('#movie-details').html(output);
-      
 
     })
     .catch((err)=>{
@@ -252,3 +279,215 @@ function getIndividualS(){
 
 
 
+
+/////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////LOCAL STORAGE///////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////
+
+function wishSelected(id){
+  let makId;
+  if(localStorage.getItem('makId')==null){
+    makId = [];
+  }
+  else{
+    makId = JSON.parse(localStorage.getItem('makId'));
+  }
+  makId.push(id);
+  localStorage.setItem("makId", JSON.stringify(makId));
+}
+
+function wishUnSelected(id){
+  if(localStorage.getItem('makId')==null){
+    makId = [];
+  }
+  else{
+    makId = JSON.parse(localStorage.getItem('makId'));
+  }
+  const indexofId = makId.indexOf(id);
+  makId.splice(indexofId, 1);
+  localStorage.setItem("makId", JSON.stringify(makId));
+}
+
+
+
+function getWishMovie(){
+  if(localStorage.getItem('makId')==null){
+    makId = [];
+  }
+  else{
+    makId = JSON.parse(localStorage.getItem('makId'));
+  }
+  console.log(makId);
+  makId.forEach((newMovie) => {
+    const URLInd = `https://api.themoviedb.org/3/movie/${newMovie}?api_key=a3d1d37e68ef5b6e3c68f6fa5f9ba613&language=en-US`;
+    axios.get(URLInd)
+    .then((response)=>{
+        movie = response.data;
+
+        console.log(movie);
+
+        const { title, poster_path, overview, id } = movie
+
+        var summary = overview.split(' ').slice(0,10).join(' ');
+
+        const movieEl = document.createElement('div')
+        movieEl.classList.add('movie')
+        
+
+
+        movieEl.innerHTML = `
+            <a onclick = "movieSelected('${id}')" href = "#"><img src="${IMG_PATH + poster_path}" alt="${title}" >
+            </a>
+            <a onclick = "movieSelected('${id}')" href = "#">
+                <div class="overview">
+                    <h3>${title}</h3>
+                    ${summary}...
+                </div>
+            </a>
+        `
+        
+        cinemaw.appendChild(movieEl)
+    })
+    .catch((err)=>{
+        console.log(err);
+    });   
+  }
+
+  )}
+  
+
+function ifItIncludes(id)
+{
+  let makId;
+  if(localStorage.getItem('makId')==null){
+    makId = [];
+  }
+  else{
+    makId = JSON.parse(localStorage.getItem('makId'));
+  }
+  console.log(makId);
+  var m = makId.includes(id);
+  return m;
+}
+
+function chooseM(){
+  if(n === true){
+    wishUnSelected(mId);
+    alert("Removed from Watchlist");
+    window.location.reload()
+  }
+  else{
+    console.log("sob sesh")
+    wishSelected(mId);
+    alert("Added to Watchlist");
+    window.location.reload()
+  }
+}
+
+
+
+/////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////LOCAL STORAGE///////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////
+
+function wishSelectedS(id){
+  let makSId;
+  if(localStorage.getItem('makSId')==null){
+    makSId = [];
+  }
+  else{
+    makSId = JSON.parse(localStorage.getItem('makSId'));
+  }
+  makSId.push(id);
+  localStorage.setItem("makSId", JSON.stringify(makSId));
+}
+
+function wishUnSelectedS(id){
+  let makSId;
+  if(localStorage.getItem('makSId')==null){
+    makSId = [];
+  }
+  else{
+    makSId = JSON.parse(localStorage.getItem('makSId'));
+  }
+  const indexofSId = makSId.indexOf(id);
+  console.log(indexofSId);
+  makSId.splice(indexofSId, 1);
+  localStorage.setItem("makSId", JSON.stringify(makSId));
+}
+
+
+
+function getWishMovieS(){
+  if(localStorage.getItem('makSId')==null){
+    makSId = [];
+  }
+  else{
+    makSId = JSON.parse(localStorage.getItem('makSId'));
+  }
+  console.log(makSId);
+  makSId.forEach((newSeries) => {
+    console.log(newSeries);
+    const URLInd = `https://api.themoviedb.org/3/tv/${newSeries}?api_key=a3d1d37e68ef5b6e3c68f6fa5f9ba613&language=en-US`;
+    axios.get(URLInd)
+    .then((response)=>{
+        movie = response.data;
+
+        console.log(movie);
+
+        const { name, poster_path, overview, id } = movie
+
+        var summary = overview.split(' ').slice(0,10).join(' ');
+
+        const movieEl = document.createElement('div')
+        movieEl.classList.add('movie')
+        
+
+
+        movieEl.innerHTML = `
+            <a onclick = "tvSelected('${id}')" href = "#"><img src="${IMG_PATH + poster_path}" alt="${name}" >
+            </a>
+            <a onclick = "tvSelected('${id}')" href = "#">
+                <div class="overview">
+                    <h3>${name}</h3>
+                    ${summary}...
+                </div>
+            </a>
+        `
+        
+        seriesw.appendChild(movieEl)
+    })
+    .catch((err)=>{
+        console.log(err);
+    });   
+  }
+
+  )}
+  
+
+function ifItSIncludes(id)
+{
+  let makSId;
+  if(localStorage.getItem('makSId')==null){
+    makSId = [];
+  }
+  else{
+    makSId = JSON.parse(localStorage.getItem('makSId'));
+  }
+  console.log(makSId);
+  var l = makSId.includes(id);
+  return l;
+}
+
+function chooseS(){
+  if(l === true){
+    wishUnSelectedS(mIdS);
+    alert("Removed from Watchlist");
+    window.location.reload()
+  }
+  else{
+    wishSelectedS(mIdS);
+    alert("Added to Watchlist");
+    window.location.reload()
+  }
+}

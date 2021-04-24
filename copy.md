@@ -26,3 +26,6 @@ let IndividualId = sessionStorage.getItem('movieId');
 
 //HERE
 
+
+  window.location = 'wishlist.html';
+  return false;

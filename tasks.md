@@ -2,7 +2,7 @@
 
 1. Make the header with :- logo, Movies, TV Shows, A Search Bar
 2. Slider Images
-3. Those boxes with video behind when hovered
+3. Those boxes with video behind when hovered (https://youtu.be/R_OERlafbmw   2:43 hrs)
 4. Popular Movies
 5. Popular Shows
 6. When hovered over shows name and little overview
@@ -26,4 +26,7 @@
 2. Movie poster on left a light background image
 3. On the right side:- Name, Overview, Imdb Rating, trailer, etc
 
-movies.js line 142
+//Filtering movies and series according to genres
+1. New Window each for movies and series
+2. Will just have flex-wrap: wrap and a bit of styling
+

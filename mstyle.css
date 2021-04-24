@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&display=swap");
+
 #movie-details{
     display: flex;
     flex-direction: row;
@@ -37,10 +39,12 @@
 }
 
 .right .btn{
-    background-color: rgb(209, 209, 0);
+    font-family: "Poppins", sans-serif;
+    background-color: #f5c518;
     text-decoration: none;
     color: black;
     padding: 5px;
+    font-size: 1rem;
 }
 
 .left li{
@@ -49,4 +53,23 @@
 
 .left strong{
     color: white;
+}
+
+.tags{
+    margin-top: 5.5rem;
+    float: right;
+    margin-right: 2rem;
+}
+
+.tags select{
+    background-color: transparent;      
+    color: white;
+    padding: 0.3rem;
+    padding-right: 1rem;
+    padding-left: 0.4rem;
+    
+}
+
+.tags option{
+    background-color: #323232
 }

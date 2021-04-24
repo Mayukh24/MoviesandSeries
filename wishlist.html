@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="mstyle.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
+    <title>Movie App</title>
+  </head>
+  <body>
+
+
+    <header>
+        <div class="logo-and-ul">
+          <a href = "index.html" class = "logo"><img src="./images/MAKSTAR.png" alt="Logo" height="50px"></a>
+          <ul>
+            <li><a href = "movies.html">Movies</a></li>
+            <li><a href = "series.html">TV Shows</a></li>
+            <li><a href = "wishlist.html">Watchlist</a></li>
+          </ul>
+        </div>
+        
+        <button id="button-s" class="search" onclick="myFunction()">Search</button>
+      </header>
+      </header>
+
+
+
+    <div class="heading-1">
+      <h1>MOVIES</h1>     
+        <main id="cinema-w"></main>        
+      </div>
+    
+
+    <div class="heading-2">
+      <h1>SERIES</h1>
+      <main id="tv-series-w"></main>
+      
+    </div>
+
+    
+
+
+    <script src="app.js"></script>
+    <script src="movies.js"></script>
+    <script src="tv.js"></script>
+    <script src="individual.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script>
+        getWishMovie();
+        getWishMovieS();
+        console.log('Individual');
+    </script>
+  </body>
+</html>
