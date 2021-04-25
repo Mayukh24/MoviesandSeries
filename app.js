@@ -53,7 +53,7 @@ function showSMovies(movies) {
         var summary = overview.split(' ').slice(0,10).join(' ');
 
         const movieEl = document.createElement('div')
-        movieEl.classList.add('movie')
+        movieEl.classList.add('movie1')
 
         movieEl.innerHTML = `
         <a onclick = "movieSelected('${id}')" href = "#"><img src="${IMG_PATH + poster_path}" alt="${title}" ></a>
@@ -85,7 +85,7 @@ function showSSeries(series) {
         var summary = overview.split(' ').slice(0,10).join(' ');
 
         const tvEl = document.createElement('div')
-        tvEl.classList.add('tv')
+        tvEl.classList.add('tv1')
 
         tvEl.innerHTML = `
         <a onclick = "tvSelected('${id}')" href = "#"><img src="${IMG_PATH + poster_path}" alt="${name}" ></a>
@@ -331,7 +331,7 @@ function getWishMovie(){
         var summary = overview.split(' ').slice(0,10).join(' ');
 
         const movieEl = document.createElement('div')
-        movieEl.classList.add('movie')
+        movieEl.classList.add('movie1')
         
 
 
@@ -440,7 +440,7 @@ function getWishMovieS(){
         var summary = overview.split(' ').slice(0,10).join(' ');
 
         const movieEl = document.createElement('div')
-        movieEl.classList.add('movie')
+        movieEl.classList.add('movie1')
         
 
 

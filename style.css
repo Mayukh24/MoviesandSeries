@@ -236,16 +236,16 @@ h1 {
 }
 
 .scroll-c {
-  margin: 4px, 4px;
-  margin-left: 3rem;
-  padding: 4px;
-  width: 1150px;
+  width: 100%;
   overflow: auto;
   height: 400px;
+  overflow: hidden;
+  overflow-x: scroll;
 }
 .scroll-c::-webkit-scrollbar {
   display: none; /* Chrome and Brave */
 }
+
 
 .scroll-c {
   -ms-overflow-style: none; /* IE and Edge */
@@ -264,6 +264,8 @@ h1 {
   box-shadow: rgb(0 0 0 / 69%) 0px 26px 30px -10px,
     rgb(0 0 0 / 73%) 0px 16px 10px -10px;
 }
+
+
 
 .movie img {
   object-fit: cover;
@@ -299,6 +301,14 @@ h1 {
   cursor: pointer;
 }
 
+.movie:first-child { 
+  margin-left: 5rem !important;
+ }
+
+.movie:first-child:hover { 
+  margin-right: -0.25rem;
+ }
+
 .movie:hover img {
   filter: blur(2px);
   transform: scale(1.2);
@@ -309,6 +319,54 @@ h1 {
   font-size: 0.9rem;
 }
 
+/* New Movie*/
+.movie1 {
+  width: 200px;
+  height: 300px;
+  margin: 1rem;
+  margin-top: 2rem;
+  margin-bottom: 2.5rem;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: rgb(0 0 0 / 69%) 0px 26px 30px -10px,
+    rgb(0 0 0 / 73%) 0px 16px 10px -10px;
+}
+
+
+
+.movie1 img {
+  object-fit: cover;
+  height: 100%;
+  transition: transform 1s, filter 2s ease-in-out;
+  filter: blur(0);
+  transform: scale(1);
+}
+
+
+
+.movie1:hover {
+  width: 220px;
+  height: 320px;
+  margin-left: 0.4rem;
+  margin-right: 0.35rem;
+  margin-top: 1.25rem;
+  margin-bottom: 2.5rem;
+  cursor: pointer;
+}
+
+
+.movie1:hover img {
+  filter: blur(2px);
+  transform: scale(1.2);
+  filter: grayscale(50%);
+}
+.movie1:hover .overview {
+  transform: translateY(0);
+  font-size: 0.9rem;
+}
+
+/*New Series*/
 .tv {
   width: 200px;
   height: 300px;
@@ -349,10 +407,59 @@ h1 {
   font-size: 0.9rem;
 }
 
+.tv:first-child { 
+  margin-left: 5rem !important;
+ }
+
+.tv:first-child:hover { 
+  margin-right: -0.25rem;
+ }
+
 .container {
   margin-top: 10rem;
 }
 
 .thumbnail {
   width: 200px;
+}
+
+/*Update Series*/
+.tv1 {
+  width: 200px;
+  height: 300px;
+  margin: 1rem;
+  margin-top: 2rem;
+  margin-bottom: 2.5rem;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: rgb(0 0 0 / 69%) 0px 26px 30px -10px,
+    rgb(0 0 0 / 73%) 0px 16px 10px -10px;
+}
+
+.tv1 img {
+  object-fit: cover;
+  height: 100%;
+  transition: transform 1s, filter 2s ease-in-out;
+  filter: blur(0);
+  transform: scale(1);
+}
+
+.tv1:hover {
+  width: 220px;
+  height: 320px;
+  margin-left: 0.4rem;
+  margin-right: 0.35rem;
+  margin-top: 1.25rem;
+  margin-bottom: 2.5rem;
+}
+
+.tv1:hover img {
+  filter: blur(2px);
+  transform: scale(1.2);
+  filter: grayscale(50%);
+}
+.tv1:hover .overview {
+  transform: translateY(0);
+  font-size: 0.9rem;
 }

@@ -73,3 +73,7 @@
 .tags option{
     background-color: #323232
 }
+
+button{
+    cursor: pointer;
+}
