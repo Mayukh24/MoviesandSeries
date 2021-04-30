@@ -436,4 +436,13 @@
     .right-hand-side{
         padding-right: 0.4rem
     }
+      .right{
+        max-width: 260px;
+    }
+    .image-dp{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 1rem;
+    }
   }
