@@ -1,0 +1,439 @@
+@media only screen and (max-width: 736px) {
+    body {
+      font-size: 14px;
+    }
+    .logo img{
+        margin-top: 0.5rem;
+        height: 40px;
+    }
+    header{        
+        padding: 0px 8px;
+    }
+    .search{
+        font-size: 0.7rem;
+        margin-top: 0.5rem;
+    }
+    h1{
+        margin-left: 2rem;
+    }
+    ul{
+        padding-left:0;
+        margin-top: 1.5rem;
+        font-size: 0.7rem;
+        margin-right: 10px;
+    }
+    .scroll-c{
+        height: 160px;
+        margin-bottom: 0;
+    }
+    .movie {
+        width: 200px;
+        height: 120px;
+        margin: 0.5rem;
+        margin-top: 1rem;
+        margin-bottom: 2rem;
+    
+    }
+    .movie img {
+        object-fit: cover;
+        width: 100%;
+    }
+    .movie:hover {
+        width: 250px;
+        height: 150px;
+        margin-left: -1.0rem;
+        margin-right: -1.11rem;
+        margin-top: 0.25rem;
+        margin-bottom: 2.5rem;
+        cursor: pointer;
+        z-index: 2;
+    }
+    .movie:first-child { 
+        margin-left: 2rem !important;
+        margin-right: 0.7rem;
+    }
+      
+    .movie:first-child:hover { 
+        margin-right: -2.41rem;
+        margin-left: -1rem;
+    }
+
+    .movie:hover .overview {
+        font-size: 0.8rem;
+    }
+
+    
+    .overview {
+        color: #fff;
+        padding: 0.5rem;
+    }
+
+    .tv {
+        width: 200px;
+        height: 120px;
+        margin: 0.5rem;
+        margin-top: 1rem;
+        margin-bottom: 2rem;
+    
+    }
+    .tv img {
+        object-fit: cover;
+        width: 100%;
+    }
+    .tv:hover {
+        width: 250px;
+        height: 150px;
+        margin-left: -1.0rem;
+        margin-right: -1.11rem;
+        margin-top: 0.25rem;
+        margin-bottom: 2.5rem;
+        cursor: pointer;
+        z-index: 4;
+    }
+    .tv:first-child { 
+        margin-left: 2rem !important;
+        margin-right: 0.7rem;
+    }
+      
+    .tv:first-child:hover { 
+        margin-right: -2.41rem;
+    }
+
+    .tv:hover .overview {
+        font-size: 0.8rem;
+    }
+
+    /* NEW PARTS*/
+    .movie1{
+        width: 200px;
+        height: 120px;
+        margin: 0.5rem;
+        margin-top: 1rem;
+        margin-bottom: 1.64rem;
+    }
+    .movie1 img {
+        object-fit: cover;
+        width: 100%;
+    }
+    .movie1:hover {
+        width: 250px;
+        height: 150px;
+        margin-left: -1.0rem;
+        margin-right: -1.11rem;
+        margin-top: 0.25rem;
+        margin-bottom: 0.5rem;
+        cursor: pointer;
+        z-index: 2;
+    }
+    .movie1:hover .overview {
+        font-size: 0.8rem;
+    }
+
+    
+
+    .tv1 {
+        width: 200px;
+        height: 120px;
+        margin: 0.5rem;
+        margin-top: 1rem;
+        margin-bottom: 2rem;
+        margin-bottom: 1.64rem;
+    
+    }
+    .tv1 img {
+        object-fit: cover;
+        width: 100%;
+    }
+    .tv1:hover {
+        width: 250px;
+        height: 150px;
+        margin-left: -1.0rem;
+        margin-right: -1.11rem;
+        margin-top: 0.25rem;
+        margin-bottom: 2.5rem;
+        cursor: pointer;
+        z-index: 4;
+    }
+    .tv1:hover .overview {
+        font-size: 0.8rem;
+    }
+    
+  }
+
+
+  @media screen and (max-width: 577px) {
+
+    body {
+      font-size: 10px;
+    }
+    .logo-and-ul{        
+      overflow-x: hidden;
+    }
+    
+    .nav-links{
+        position:absolute;
+        left: 0px;
+        height: 92vh;
+        top: 2rem;
+        display: flex;
+        flex-direction: column;
+        align-items: column;
+        background-color: rgba(9, 11, 19, 1);
+        z-index: 1000;
+        width: 70%;
+        justify-content: space-around;
+        font-size: 1.2rem;
+        transform: translateX(-100%);
+        transition: transform 0.5s ease-in;
+    }
+
+
+    @keyframes navLinkFade{
+        from{
+            opacity: 0;
+            transform: translateX(-50px);
+        }
+        to{            
+            opacity: 1;
+            transform: translateX(0px);
+        }
+    }
+
+    .burger{
+        display: block;
+        cursor: pointer;
+    }
+
+    .nav-active{
+        transform: translateX(0%);
+    }
+
+
+    .logo img{
+        margin-top: 0.2rem;
+        height: 30px;
+    }
+    header{        
+        padding: 0px 8px;
+    }
+    .search{
+        font-size: 0.7rem;
+        margin-top: 0.5rem;
+    }
+    h1{
+        font-size: 0.7rem;
+        margin-left: 2rem;
+    }
+    ul{
+        padding-left:0;
+        margin-top: 1.5rem;
+        font-size: 0.7rem;
+        margin-right: 10px;
+    }
+    .scroll-c{
+        height: 160px;
+        margin-bottom: 0;
+    }
+    .movie {
+        width: 80px;
+        height: 120px;
+        margin: 0.5rem;
+        margin-top: 1rem;
+        margin-bottom: 2rem;
+    
+    }
+    .movie img {
+        object-fit: cover;
+        width: 100%;
+    }
+    .movie:hover {
+        width: 100px;
+        height: 150px;
+        margin-left: -0.1rem;
+        margin-right: -0.15rem;
+        margin-top: 0.25rem;
+        margin-bottom: 2.5rem;
+        cursor: pointer;
+        z-index: 2;
+    }
+    .movie:first-child { 
+        margin-left: 2rem !important;
+        margin-right: 0.7rem;
+    }
+      
+    .movie:first-child:hover { 
+        margin-right: -0.55rem;
+        margin-left: -1rem;
+    }
+
+    .movie:hover .overview {
+        font-size: 0.8rem;
+    }
+
+    
+    .overview {
+        color: #fff;
+        padding: 0.5rem;
+    }
+
+    .tv {
+        width: 80px;
+        height: 120px;
+        margin: 0.5rem;
+        margin-top: 1rem;
+        margin-bottom: 2rem;
+    
+    }
+    .tv img {
+        object-fit: cover;
+        width: 100%;
+    }
+    .tv:hover {
+        width: 100px;
+        height: 150px;
+        margin-left: -0.1rem;
+        margin-right: -0.15rem;
+        margin-top: 0.25rem;
+        margin-bottom: 2.5rem;
+        cursor: pointer;
+        z-index: 4;
+    }
+    .tv:first-child { 
+        margin-left: 2rem !important;
+        margin-right: 0.7rem;
+    }
+      
+    .tv:first-child:hover { 
+        margin-right: -0.55rem;   
+        margin-left: -2rem;
+    }
+
+    .tv:hover .overview {
+        font-size: 0.8rem;
+    }
+
+    /* NEW PARTS*/
+    .movie1{
+        width: 80px;
+        height: 120px;
+        margin: 0.5rem;
+        margin-top: 1rem;
+        margin-bottom: 2rem;
+        margin-right: 1rem;
+    }
+    .movie1 img {
+        object-fit: cover;
+        width: 100%;
+    }
+    .movie1:hover {
+        width: 100px;
+        height: 150px;
+        margin-left: -0.1rem;
+        margin-right: 0.36rem;
+        margin-top: 0.25rem;
+        margin-bottom: 0.5rem;
+        cursor: pointer;
+        z-index: 2;
+    }
+    .movie1:hover .overview {
+        font-size: 0.8rem;
+    }
+
+    #cinema-w{
+        margin-left: 1.5rem;
+    }
+    #tv-series-w{
+        margin-left: 1.5rem;
+    }
+    #cinema-s{
+        margin-left: 1.5rem;
+    }
+    #tv-series-s{
+        margin-left: 1.5rem;
+    }
+    
+
+    .tv1 {
+        width: 80px;
+        height: 120px;
+        margin: 0.5rem;
+        margin-top: 1rem;
+        margin-bottom: 2rem;
+        margin-right: 1rem;
+    
+    }
+    .tv1 img {
+        object-fit: cover;
+        width: 100%;
+    }
+    .tv1:hover {
+        width: 100px;
+        height: 150px;
+        margin-left: -0.1rem;
+        margin-right: 0.36rem;
+        margin-top: 0.25rem;
+        margin-bottom: 0.5rem;
+        cursor: pointer;
+        z-index: 2;
+    }
+    .tv1:hover .overview {
+        font-size: 0.8rem;
+    }
+    
+    .search1{
+        margin-top: 0.3rem;
+        font-size: 0.5rem;
+        padding: 0.5rem 0.5rem;
+        
+    }
+    .heading-2 h1{
+        padding-top: 0;
+        margin-top: 0;
+    }
+
+    #movie-details{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .info-right{
+        display: none;
+    }
+    .info{
+        display:block;
+    }
+    .left{
+        background-color: transparent;
+        padding-bottom: 0px;
+    }
+    .right{
+        margin: 0;
+        padding: 15px;
+        padding-top: 0;
+    }
+    #movie-details{
+        margin: 0;
+    }
+    #movie-details h1{
+        font-size: 1.2rem;
+        padding: 0;
+        margin: 0;;
+    }
+    .info strong{
+        color: white;
+    }
+    .info p{
+        color: rgb(196, 113, 5);
+    }
+    .right .btn{
+        font-size: 0.5rem;
+    }
+    .container{
+        margin-top: 3rem;
+    }
+    .right-hand-side{
+        padding-right: 0.4rem
+    }
+  }

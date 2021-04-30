@@ -5,23 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="mstyle.css" />
+    <link rel="stylesheet" href="responsive.css" />
+    <link href="https://kit-pro.fontawesome.com/releases/v5.15.3/css/pro.min.css" rel="stylesheet">
     <title>Movie App</title>
   </head>
   <body data-barba="wrapper">
 
 
     <header>
+      <div class="burger">
+        <div class="line1"></div>
+        <div class="line1"></div>
+        <div class="line1"></div>
+      </div>
       <div class="logo-and-ul">
         <a href = "index.html" class = "logo"><img src="./images/MAKSTAR.png" alt="Logo" height="50px"></a>
-        <ul>
+        <ul class = "nav-links">
           <li><a href = "movies.html">Movies</a></li>
           <li><a href = "series.html">TV Shows</a></li>
           <li><a href = "wishlist.html">Watchlist</a></li>
+          <li></li>
         </ul>
-      </div>
-      
-      <button id="button-s" class="search" onclick="myFunction()">Search</button>
-    </header>
+      </div> 
+      <div class="right-hand-side">
+        <i class="fal fa-search" class="search0" onclick="myFunction()"></i>
+      </div>     
     </header>
 
 

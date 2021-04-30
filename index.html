@@ -4,20 +4,29 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="responsive.css" />
+    <link href="https://kit-pro.fontawesome.com/releases/v5.15.3/css/pro.min.css" rel="stylesheet">
     <title>Movie App</title>
   </head>
   <body data-barba="wrapper">
     <header>
+      <div class="burger">
+        <div class="line1"></div>
+        <div class="line1"></div>
+        <div class="line1"></div>
+      </div>
       <div class="logo-and-ul">
         <a href = "index.html" class = "logo"><img src="./images/MAKSTAR.png" alt="Logo" height="50px"></a>
-        <ul>
+        <ul class = "nav-links">
           <li><a href = "movies.html">Movies</a></li>
           <li><a href = "series.html">TV Shows</a></li>
           <li><a href = "wishlist.html">Watchlist</a></li>
+          <li></li>
         </ul>
-      </div>
-      
-      <button id="button-s" class="search" onclick="myFunction()">Search</button>
+      </div> 
+      <div class="right-hand-side">
+        <i class="fal fa-search" class="search0" onclick="myFunction()"></i>
+      </div>     
     </header>
 
 
@@ -90,18 +99,18 @@
     <div id="jssor_1" style="position:relative;margin:0 auto;top:5rem;left:0px;width:800px;height:180px;overflow:hidden;visibility:hidden;">
         <!-- Loading Screen -->
         <div data-u="loading" style="position:absolute;top:0px;left:0px;width:100%;height:100%;text-align:center;background-position:50% 50%;background-repeat:no-repeat;background-image:url('images/circles.svg');background-color:rgba(255, 255, 255, 0.7);background-size:45px 45px;"></div>
-        <div data-u="slides" style="cursor:default;position:relative;top:0px;left:0px;width:800px;height:180px;overflow:hidden;">
+        <div data-u="slides" style="cursor:pointer;position:relative;top:0px;left:0px;width:800px;height:180px;overflow:hidden;">
             <div>
-                <img data-u="image" src="images/av.jpg" />
+                <img data-u="image" onclick = "movieSelected('299534')" href = "#" src="images/av.jpg" />
             </div>
             <div>
-                <img data-u="image" src="images/fal.jpg" />
+                <img data-u="image" onclick = "tvSelected('88396')" href = "#" src="images/fal.jpg" />
             </div>
             <div>
-                <img data-u="image" src="images/mha.jpg" />
+                <img data-u="image" onclick = "tvSelected('65930')" href = "#" src="images/mha.jpg" />
             </div>
             <div>
-                <img data-u="image" src="images/scoob.jpeg" />
+                <img data-u="image" onclick = "movieSelected('385103')" href = "#" src="images/scoob.jpeg" />
             </div>
         </div><a data-scale="0" href="https://www.jssor.com" style="display:none;position:absolute;">animation</a>
         <!-- Bullet Navigator -->

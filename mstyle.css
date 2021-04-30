@@ -5,11 +5,13 @@
     flex-direction: row;
     margin: 2rem;
     padding: 1rem;
+    background-color: rgba(24, 21, 32, 0.712);
 }
 
 .left{    
     padding: 1rem;
-    background-color: rgba(24, 21, 32, 0.712);
+    background-color: rgba(40, 40, 41, 0.712);
+    max-width: 260px;
 }
 
 .extra-info ul{
