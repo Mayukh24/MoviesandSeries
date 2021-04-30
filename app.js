@@ -182,6 +182,7 @@ function getIndividual(){
             return obj.name;
         }).join(","));
         let output;  
+        let output1;
 
         output =`
         <div class="left">        
@@ -217,12 +218,59 @@ function getIndividual(){
           </div>
           <div class="life">
             <button onclick="location.href='http://imdb.com/title/${imdb_id}'" class="btn btn-primary">View IMDB</button>
-            <button id="button-s" class="btn btn-primary" onclick="chooseM()">Add or Remove from Watchlist</button>
+            <button id="button-s" class="btn btn-primary" onclick="chooseM()">Add to Watchlist</button>
           </div>
         </div>
       `;
 
+      output1 =`
+        <div class="left">        
+          <div class="image-dp">
+            <img src="${IMG_PATH + poster_path}" class="thumbnail">
+          </div>
+          <div class = "info">
+            <h1>${title}</h1>
+            <p><strong>Genre:</strong> ${gen}</p>
+          <hr>
+          </div>
+          <div class="extra-info">
+          <h2>Information</h2>
+            <ul class="list-group">
+              <li class="list-group-item"><strong>Rating : </strong><i class="fas fa-star"></i> ${vote_average}</li>
+              <li class="list-group-item"><strong>Released : </strong> ${release_date}</li>
+              <li class="list-group-item"><strong>Duration : </strong> ${runtime} mins</li>
+              <li class="list-group-item"><strong>Status : </strong> ${status}</li>
+              <li class="list-group-item"><strong>Produced by : </strong> ${prod}</li>
+            </ul>
+          </div>
+        </div>
+        <div class="right">
+        <div class = "info-right">
+        <h1>${title}</h1>
+          <p><strong>Genre:</strong> ${gen}</p>
+        </div>                  
+          <hr>
+          <div class="plot">
+            <h2>Synopsis</h2>
+            ${overview}
+            <hr>
+          </div>
+          <div class="life">
+            <button onclick="location.href='http://imdb.com/title/${imdb_id}'" class="btn btn-primary">View IMDB</button>
+            <button id="button-s" class="btn btn-primary" onclick="chooseM()">Remove from Watchlist</button>
+          </div>
+        </div>
+      `;
+      console.log(n);
+
+      if(n==true){
+        $('#movie-details').html(output1);
+      }
+      else{
         $('#movie-details').html(output);
+      }
+
+        
     })
     .catch((err)=>{
         console.log(err);
@@ -304,12 +352,56 @@ function getIndividualS(){
             <hr>
           </div>
           <div class = "life">          
-            <button id="button-s" class="btn btn-primary" onclick="chooseS()">Add or Remove from Watchlist</button>
+            <button id="button-s" class="btn btn-primary" onclick="chooseS()">Add to Watchlist</button>
           </div>
         </div>
       `;
-      
-      $('#movie-details').html(output);
+
+      let output1 =`
+        <div class="left">        
+          <div class="image-dp">
+            <img src="${IMG_PATH + poster_path}" class="thumbnail">
+          </div>
+          <div class = "info">
+            <h1>${name}</h1>
+            <p><strong>Genre:</strong> ${gen}</p>
+          <hr>
+          </div>
+          <div class="extra-info">
+          <h2>Information</h2>
+            <ul class="list-group">
+              <li class="list-group-item"><strong>Rating : </strong><i class="fas fa-star"></i> ${vote_average}</li>
+              <li class="list-group-item"><strong>Released : </strong> ${first_air_date}</li>
+              <li class="list-group-item"><strong>Duration : </strong> ${episode_run_time} mins per ep</li>
+              <li class="list-group-item"><strong>Status : </strong> ${status}</li>
+              <li class="list-group-item"><strong>Number of Seasons : </strong> ${number_of_seasons}</li>
+              <li class="list-group-item"><strong>Produced by : </strong> ${prod}</li>
+            </ul>
+          </div>
+        </div>
+        <div class="right">        
+          <div class = "info-right">
+            <h1>${name}</h1>
+            <p><strong>Genre:</strong> ${gen}</p>
+          </div>                  
+          <hr>
+          <div class="plot">
+            <h2>Synopsis</h2>
+            ${overview}
+            <hr>
+          </div>
+          <div class = "life">          
+            <button id="button-s" class="btn btn-primary" onclick="chooseS()">Remove from Watchlist</button>
+          </div>
+        </div>
+      `;
+      console.log(l);
+      if(l == true){
+        $('#movie-details').html(output1);
+      }
+      else{
+        $('#movie-details').html(output);
+      }
 
     })
     .catch((err)=>{
@@ -410,12 +502,10 @@ function ifItIncludes(id)
 function chooseM(){
   if(n === true){
     wishUnSelected(mId);
-    alert("Removed from Watchlist");
-    window.location.reload()
+    window.location.reload();
   }
   else{
     wishSelected(mId);
-    alert("Added to Watchlist");
     window.location.reload()
   }
 }
@@ -512,12 +602,11 @@ function ifItSIncludes(id)
 function chooseS(){
   if(l === true){
     wishUnSelectedS(mIdS);
-    alert("Removed from Watchlist");
     window.location.reload()
   }
   else{
     wishSelectedS(mIdS);
-    alert("Added to Watchlist");
     window.location.reload()
   }
 }
+
