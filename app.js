@@ -208,9 +208,8 @@ function getIndividual(){
         <div class = "info-right">
         <h1>${title}</h1>
           <p><strong>Genre:</strong> ${gen}</p>
+        </div>                  
           <hr>
-        </div>          
-          
           <div class="plot">
             <h2>Synopsis</h2>
             ${overview}
@@ -276,6 +275,11 @@ function getIndividualS(){
           <div class="image-dp">
             <img src="${IMG_PATH + poster_path}" class="thumbnail">
           </div>
+          <div class = "info">
+            <h1>${name}</h1>
+            <p><strong>Genre:</strong> ${gen}</p>
+          <hr>
+          </div>
           <div class="extra-info">
           <h2>Information</h2>
             <ul class="list-group">
@@ -288,13 +292,14 @@ function getIndividualS(){
             </ul>
           </div>
         </div>
-        <div class="right">
-        
-          <h1>${name}</h1>
-          <p><strong>Genre:</strong> ${gen}</p>
+        <div class="right">        
+          <div class = "info-right">
+            <h1>${name}</h1>
+            <p><strong>Genre:</strong> ${gen}</p>
+          </div>                  
           <hr>
           <div class="plot">
-            <h3>Synopsis</h3>
+            <h2>Synopsis</h2>
             ${overview}
             <hr>
           </div>
